@@ -1,4 +1,14 @@
+---
+title: ClearSky AI
+emoji: 🏙️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # ClearSky AI
+
 
 ### AI-Powered Neighbourhood Pollution Intelligence Platform
 *AI-Powered Multimodal GIS Air Quality Platform for Smart Cities*
