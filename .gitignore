@@ -1,0 +1,10 @@
+.env
+*/__pycache__/
+clearsky.db
+*.db
+data/
+node_modules/
+.next/
+out/
+dist/
+build/
