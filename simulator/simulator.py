@@ -14,41 +14,41 @@ if not INGEST_URL:
     INGEST_URL = f"http://127.0.0.1:{port}/api/v1/sensors/ingest-batch"
 
 
-# Neighborhood configurations around a New Delhi centroid (Lat: 28.6139, Lon: 77.2090)
+# Neighborhood configurations spanning major cities of India
 NEIGHBORHOODS = {
     "Industrial Zone": {
-        "center": (28.6500, 77.1200),
-        "radius": 0.02,
+        "center": (28.6139, 77.2090), # Delhi NCR (North)
+        "radius": 0.05,
         "base_pollutants": {"pm25": 140, "pm10": 220, "co": 1.8, "no2": 75, "so2": 45, "o3": 35},
         "variance": 15
     },
     "Downtown Business District": {
-        "center": (28.6300, 77.2200),
-        "radius": 0.015,
+        "center": (19.0760, 72.8777), # Mumbai (West)
+        "radius": 0.05,
         "base_pollutants": {"pm25": 85, "pm10": 130, "co": 2.5, "no2": 60, "so2": 15, "o3": 40},
         "variance": 10
     },
     "Residential East": {
-        "center": (28.6200, 77.2800),
-        "radius": 0.02,
+        "center": (22.5726, 88.3639), # Kolkata (East)
+        "radius": 0.05,
         "base_pollutants": {"pm25": 55, "pm10": 85, "co": 0.8, "no2": 30, "so2": 10, "o3": 45},
         "variance": 8
     },
     "Green Valley Park": {
-        "center": (28.5800, 77.2100),
-        "radius": 0.01,
+        "center": (12.9716, 77.5946), # Bengaluru (South)
+        "radius": 0.05,
         "base_pollutants": {"pm25": 25, "pm10": 45, "co": 0.4, "no2": 15, "so2": 5, "o3": 55},
         "variance": 5
     },
     "Construction Site North": {
-        "center": (28.6900, 77.1800),
-        "radius": 0.015,
+        "center": (13.0827, 80.2707), # Chennai (Southeast)
+        "radius": 0.05,
         "base_pollutants": {"pm25": 110, "pm10": 290, "co": 1.2, "no2": 45, "so2": 12, "o3": 30},
         "variance": 20
     },
     "Suburbs West": {
-        "center": (28.6100, 77.0800),
-        "radius": 0.025,
+        "center": (17.3850, 78.4867), # Hyderabad (Central)
+        "radius": 0.05,
         "base_pollutants": {"pm25": 48, "pm10": 75, "co": 0.7, "no2": 25, "so2": 8, "o3": 42},
         "variance": 6
     }

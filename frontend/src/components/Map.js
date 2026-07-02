@@ -80,9 +80,9 @@ export default function SmartCityMap({
   activeSatelliteLayer = "none"
 }) {
   
-  // Centroid of our simulation: New Delhi (Lat: 28.6300, Lon: 77.1800)
-  const defaultCenter = [28.6300, 77.1800];
-  const defaultZoom = 12;
+  // Centroid of our simulation: India national scale
+  const defaultCenter = [20.5937, 78.9629];
+  const defaultZoom = 5;
 
   return (
     <div className="relative w-full h-[550px] rounded-2xl overflow-hidden border border-slate-800 shadow-inner">

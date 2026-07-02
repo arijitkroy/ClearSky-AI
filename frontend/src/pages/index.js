@@ -149,12 +149,12 @@ export default function Dashboard() {
     setReportNb(nbName);
     // Center coords for neighborhoods
     const centers = {
-      "Industrial Zone": { lat: 28.6500, lon: 77.1200 },
-      "Downtown Business District": { lat: 28.6300, lon: 77.2200 },
-      "Residential East": { lat: 28.6200, lon: 77.2800 },
-      "Green Valley Park": { lat: 28.5800, lon: 77.2100 },
-      "Construction Site North": { lat: 28.6900, lon: 77.1800 },
-      "Suburbs West": { lat: 28.6100, lon: 77.0800 }
+      "Industrial Zone": { lat: 28.6139, lon: 77.2090 },
+      "Downtown Business District": { lat: 19.0760, lon: 72.8777 },
+      "Residential East": { lat: 22.5726, lon: 88.3639 },
+      "Green Valley Park": { lat: 12.9716, lon: 77.5946 },
+      "Construction Site North": { lat: 13.0827, lon: 80.2707 },
+      "Suburbs West": { lat: 17.3850, lon: 78.4867 }
     };
     if (centers[nbName]) {
       setReportLat(centers[nbName].lat);

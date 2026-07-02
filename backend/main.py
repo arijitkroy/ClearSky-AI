@@ -50,75 +50,75 @@ SIMULATOR_CONTROL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.ab
 def populate_neighborhoods():
     db = SessionLocal()
     try:
-        count = db.query(models.Neighborhood).count()
-        if count > 0:
-            return
+        # Clear existing neighborhood records to force reload coordinate updates
+        db.query(models.Neighborhood).delete()
+        db.commit()
             
-        # Define mock GeoJSON coordinates for New Delhi sectors
+        # Define mock GeoJSON coordinates for major Indian cities
         neighborhood_configs = [
             {
-                "name": "Industrial Zone",
+                "name": "Industrial Zone", # Delhi NCR (North)
                 "boundary": {
                     "type": "Polygon",
                     "coordinates": [[
-                        [77.1000, 28.6700], [77.1400, 28.6700],
-                        [77.1400, 28.6300], [77.1000, 28.6300],
-                        [77.1000, 28.6700]
+                        [77.1600, 28.6600], [77.2600, 28.6600],
+                        [77.2600, 28.5600], [77.1600, 28.5600],
+                        [77.1600, 28.6600]
                     ]]
                 }
             },
             {
-                "name": "Downtown Business District",
+                "name": "Downtown Business District", # Mumbai (West)
                 "boundary": {
                     "type": "Polygon",
                     "coordinates": [[
-                        [77.2000, 28.6500], [77.2400, 28.6500],
-                        [77.2400, 28.6100], [77.2000, 28.6100],
-                        [77.2000, 28.6500]
+                        [72.8300, 19.1300], [72.9300, 19.1300],
+                        [72.9300, 19.0300], [72.8300, 19.0300],
+                        [72.8300, 19.1300]
                     ]]
                 }
             },
             {
-                "name": "Residential East",
+                "name": "Residential East", # Kolkata (East)
                 "boundary": {
                     "type": "Polygon",
                     "coordinates": [[
-                        [77.2600, 28.6400], [77.3000, 28.6400],
-                        [77.3000, 28.6000], [77.2600, 28.6000],
-                        [77.2600, 28.6400]
+                        [88.3100, 22.6200], [88.4100, 22.6200],
+                        [88.4100, 22.5200], [88.3100, 22.5200],
+                        [88.3100, 22.6200]
                     ]]
                 }
             },
             {
-                "name": "Green Valley Park",
+                "name": "Green Valley Park", # Bengaluru (South)
                 "boundary": {
                     "type": "Polygon",
                     "coordinates": [[
-                        [77.1900, 28.5900], [77.2300, 28.5900],
-                        [77.2300, 28.5700], [77.1900, 28.5700],
-                        [77.1900, 28.5900]
+                        [77.5400, 13.0200], [77.6400, 13.0200],
+                        [77.6400, 12.9200], [77.5400, 12.9200],
+                        [77.5400, 13.0200]
                     ]]
                 }
             },
             {
-                "name": "Construction Site North",
+                "name": "Construction Site North", # Chennai (Southeast)
                 "boundary": {
                     "type": "Polygon",
                     "coordinates": [[
-                        [77.1600, 28.7100], [77.2000, 28.7100],
-                        [77.2000, 28.6700], [77.1600, 28.6700],
-                        [77.1600, 28.7100]
+                        [80.2200, 13.1300], [80.3200, 13.1300],
+                        [80.3200, 13.0300], [80.2200, 13.0300],
+                        [80.2200, 13.1300]
                     ]]
                 }
             },
             {
-                "name": "Suburbs West",
+                "name": "Suburbs West", # Hyderabad (Central)
                 "boundary": {
                     "type": "Polygon",
                     "coordinates": [[
-                        [77.0500, 28.6300], [77.1000, 28.6300],
-                        [77.1000, 28.5900], [77.0500, 28.5900],
-                        [77.0500, 28.6300]
+                        [78.4400, 17.4300], [78.5400, 17.4300],
+                        [78.5400, 17.3300], [78.4400, 17.3300],
+                        [78.4400, 17.4300]
                     ]]
                 }
             }
