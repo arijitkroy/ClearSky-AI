@@ -43,9 +43,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Global variables for caching model states
 forecasting_engine = forecaster.AirQualityForecaster(target_col="aqi")
-SIMULATOR_CONTROL_PATH = "d:/Clg Docs/7th Sem/CodeWithAI/simulator_control.json"
+SIMULATOR_CONTROL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "simulator_control.json")
 
 # Helper to pre-populate neighborhoods on startup
 def populate_neighborhoods():
