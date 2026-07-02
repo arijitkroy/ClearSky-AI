@@ -320,7 +320,6 @@ def run_simulator_loop():
         # Check simulator state updates from a local temporary state or just standard loop
         # We can implement a simple control file in the workspace
         control_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "simulator_control.json")
-        import os
         import json
         if os.path.exists(control_file):
             try:
