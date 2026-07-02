@@ -201,6 +201,14 @@ def ingest_sensor_batch(payload: dict, background_tasks: BackgroundTasks, db: Se
     sensors_meta = payload.get("sensors", [])
     readings_data = payload.get("readings", [])
     
+    # Extract device-based timestamp from the batch readings
+    device_time = datetime.datetime.utcnow()
+    if readings_data and "timestamp" in readings_data[0]:
+        try:
+            device_time = datetime.datetime.fromisoformat(readings_data[0]["timestamp"])
+        except Exception:
+            pass
+            
     # 1. Update/Insert Sensors
     sensor_map = {}
     for s_meta in sensors_meta:
@@ -215,13 +223,13 @@ def ingest_sensor_batch(payload: dict, background_tasks: BackgroundTasks, db: Se
                 neighbourhood=s_meta["neighbourhood"],
                 status=s_meta["status"],
                 battery_level=s_meta["battery_level"],
-                last_active=datetime.datetime.utcnow()
+                last_active=device_time
             )
             db.add(db_sensor)
         else:
             db_sensor.status = s_meta["status"]
             db_sensor.battery_level = s_meta["battery_level"]
-            db_sensor.last_active = datetime.datetime.utcnow()
+            db_sensor.last_active = device_time
             
         sensor_map[sensor_id] = db_sensor
         
