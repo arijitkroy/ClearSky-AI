@@ -10,7 +10,7 @@ import os
 # Target API endpoint
 INGEST_URL = os.getenv("INGEST_URL")
 if not INGEST_URL:
-    port = os.getenv("PORT", "8000")
+    port = os.getenv("PORT", "7860")
     INGEST_URL = f"http://127.0.0.1:{port}/api/v1/sensors/ingest-batch"
 
 
