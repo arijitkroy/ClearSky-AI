@@ -8,7 +8,10 @@ from typing import List, Dict, Any
 import os
 
 # Target API endpoint
-INGEST_URL = os.getenv("INGEST_URL", "http://127.0.0.1:8000/api/v1/sensors/ingest-batch")
+INGEST_URL = os.getenv("INGEST_URL")
+if not INGEST_URL:
+    port = os.getenv("PORT", "8000")
+    INGEST_URL = f"http://127.0.0.1:{port}/api/v1/sensors/ingest-batch"
 
 
 # Neighborhood configurations around a New Delhi centroid (Lat: 28.6139, Lon: 77.2090)

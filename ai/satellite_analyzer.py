@@ -80,8 +80,10 @@ def get_satellite_grids(centroid_lat: float = 28.6139, centroid_lon: float = 77.
             grid_cells.append({
                 "id": f"cell-{r}-{c}",
                 "bounds": [
-                    [float(cell_lat_min), float(cell_lon_min)], # SouthWest
-                    [float(cell_lat_max), float(cell_lon_max)]  # NorthEast
+                    [float(cell_lat_min), float(cell_lon_min)], # SW
+                    [float(cell_lat_max), float(cell_lon_min)], # NW
+                    [float(cell_lat_max), float(cell_lon_max)], # NE
+                    [float(cell_lat_min), float(cell_lon_max)]  # SE
                 ],
                 "ndvi": float(round(ndvi, 3)),
                 "urban_density": float(round(urban_density, 3)),
